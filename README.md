@@ -4,8 +4,6 @@
 
 ## Users table
 | columns | type   |                                        |
-| name    | string | index: true, nill: false, unique: true |
-| mail    | string | null: false                            |
-| columns | type   |                                        |
+|---------|--------|----------------------------------------|
 | name    | string | index: true, nill: false, unique: true |
 | mail    | string | null: false                            |
