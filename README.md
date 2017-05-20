@@ -18,7 +18,7 @@
 | timestamps | datetime |
 
 
-#＃ Association
+## Association
 * has_many :members_tag
 * has_many :groups, through: members_tag
 * has_many :messages_tag
