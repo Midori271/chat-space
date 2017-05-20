@@ -3,9 +3,10 @@
 2.3.1
 
 ## Users table
-| columns | type   |                                        |
-|---------|--------|----------------------------------------|
-| name    | string | index: true, nill: false, unique: true |
+| columns  | type    |                                        |
+|----------|---------|----------------------------------------|
+| name     | string  | index: true, nill: false, unique: true |
+| group_id | integer | index: true, nill: false               |
 
 ## messages table
 | column     | type     |
@@ -22,10 +23,10 @@
 | member  | string |
 
 ## 中間テーブル
-| columns | type   |
-|---------|--------|
-| member_id  | string |
-| group_id  | string |
+| columns   | type    |                                        |
+|-----------|---------|----------------------------------------|
+| member_id | integer | index: true, nill: false, unique: true |
+| group_id  | integer | nill: false                            |
 
 ## Association
 * has_many :members_tag
