@@ -3,47 +3,45 @@
 2.3.1
 
 ## Users table
-| columns   | type    |                                        |
-|-----------|---------|----------------------------------------|
-| name      | string  | index: true, nill: false, unique: true |
-| group_id  | integer | index: true, nill: false               |
+| columns   | type    | options                                    |
+|-----------|---------|--------------------------------------------|
+| name      | string  | index: true, null: false, unique: true     |
+| group_id  | integer | index: true, null: false, foreign_key:true |
 
-### Association
-has_many :group
-belongs_to :group
+## Association
+has_many :group, through :groups_users
 
 
 ## messages table
-| column     | type     |                  |
-|------------|----------|------------------|
-| body       | text     |                  |
-| image      | string   |                  |
-| group_id   | integer  |                  |
-| user_id    | integer  | foreign_key:true |
-| timestamps | datetime |                  |
+| column     | type     | options                                    |
+|------------|----------|--------------------------------------------|
+| body       | text     |                                            |
+| image      | string   |                                            |
+| group_id   | integer  | index: true, null: false, foreign_key:true |
+| user_id    | integer  | index: true, null: false, unique: true     |
+| timestamps | datetime |                                            |
 
-### Association
-has_many :user
-belongs_to :group
-belongs_to :user
+## Association
+has_many :user, through :groups_users
+has_many :group, through :groups_users
 
 
 ## groups table
-| columns  | type    |                           |
-|----------|---------|---------------------------|
-| name     | string  | nill: false, unique: true |
-| group_id | integer | index: true, nill: false  |
+| columns  | type    | options                                    |
+|----------|---------|--------------------------------------------|
+| name     | string  | null: false, unique: true                  |
+| group_id | integer | index: true, null: false, foreign_key:true |
 
-### Association
-belongs_to :group
+## Association
+has_many :group, through :groups_users
 
 
 ## groups_users table
-| columns   | type    |                                        |
-|-----------|---------|----------------------------------------|
-| user_id | integer | index: true, nill: false, unique: true |
-| group_id  | integer | nill: false                            |
+| columns   | type    | options                                    |
+|-----------|---------|--------------------------------------------|
+| user_id   | integer | index: true, null: false, unique: true     |
+| group_id  | integer | index: true, null: false, foreign_key:true |
 
-### Association
+## Association
 * belongs_to :user
 * belongs_to :group
