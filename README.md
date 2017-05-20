@@ -9,7 +9,8 @@
 | group_id  | integer | index: true, null: false, foreign_key:true |
 
 ## Association
-has_many :group, through :groups_users
+has_many :groups_users
+has_many :groups, through :groups_users
 
 
 ## messages table
@@ -22,8 +23,8 @@ has_many :group, through :groups_users
 | timestamps | datetime |                                            |
 
 ## Association
-has_many :user, through :groups_users
-has_many :group, through :groups_users
+has_many :users
+has_many :groups
 
 
 ## groups table
@@ -33,7 +34,7 @@ has_many :group, through :groups_users
 | group_id | integer | index: true, null: false, foreign_key:true |
 
 ## Association
-has_many :group, through :groups_users
+has_many :groups
 
 
 ## groups_users table
