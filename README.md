@@ -2,11 +2,12 @@
 ## Ruby version
 2.3.1
 
-## Users table
-| columns  | type    |                                        |
-|----------|---------|----------------------------------------|
-| name     | string  | index: true, nill: false, unique: true |
-| group_id | integer | index: true, nill: false               |
+## Members table
+| columns   | type    |                                        |
+|-----------|---------|----------------------------------------|
+| name      | string  | index: true, nill: false, unique: true |
+| member_id | integer | index: true, nill: false, unique: true |
+| group_id  | integer | index: true, nill: false               |
 
 ## messages table
 | column     | type     |
@@ -18,20 +19,20 @@
 | timestamps | datetime |
 
 ## groups table
-| columns | type   |
-|---------|--------|
-| member  | string |
+| columns  | type    |                           |
+|----------|---------|---------------------------|
+| name     | string  | nill: false, unique: true |
+| group_id | integer | index: true, nill: false  |
 
-## 中間テーブル
+## chat table
 | columns   | type    |                                        |
 |-----------|---------|----------------------------------------|
 | member_id | integer | index: true, nill: false, unique: true |
 | group_id  | integer | nill: false                            |
 
 ## Association
-* has_many :members_tag
-* has_many :groups, through: members_tag
-* has_many :messages_tag
-* has_many :members, through: memssages_tag
+* has_many :chat
+* has_many :groups, through: chat
+* has_many :members, through: chat
 * belongs_to :member
 * belongs_to :group
