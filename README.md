@@ -22,7 +22,7 @@
 | user_id    | integer  | index: true, null: false, unique: true     |
 | timestamps | datetime |                                            |
 
-## Association
+### Association
 * belongs_to :user
 * belongs_to :group
 
@@ -32,9 +32,10 @@
 |----------|---------|--------------------------------------------|
 | name     | string  | null: false, unique: true                  |
 | group_id | integer | index: true, null: false, foreign_key:true |
+| user_id  | integer | index: true, null: false, foreign_key:true |
 
-## Association
-* belongs_to :group
+### Association
+* belongs_to :user
 
 
 ## groups_users table
@@ -43,6 +44,6 @@
 | user_id   | integer | index: true, null: false, unique: true     |
 | group_id  | integer | index: true, null: false, foreign_key:true |
 
-## Association
+### Association
 * belongs_to :user
 * belongs_to :group
