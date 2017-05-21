@@ -6,7 +6,6 @@
 | columns   | type    | options                                    |
 |-----------|---------|--------------------------------------------|
 | name      | string  | index: true, null: false, unique: true     |
-| group_id  | integer | index: true, null: false, foreign_key:true |
 
 ## Association
 * has_many :groups_users
