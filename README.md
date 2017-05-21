@@ -11,7 +11,7 @@
 ## Association
 * has_many :groups_users
 * has_many :groups, through :groups_users
-* has_one :messages
+* has_many :messages
 
 
 ## messages table
@@ -31,17 +31,17 @@
 | columns  | type    | options                                    |
 |----------|---------|--------------------------------------------|
 | name     | string  | null: false, unique: true                  |
-| group_id | integer | index: true, null: false, foreign_key:true |
 | user_id  | integer | index: true, null: false, foreign_key:true |
 
 ### Association
 * belongs_to :user
+* has_ome :message
 
 
 ## groups_users table
 | columns   | type    | options                                    |
 |-----------|---------|--------------------------------------------|
-| user_id   | integer | index: true, null: false, unique: true     |
+| user_id   | integer | index: true, null: false, foreign_key:true |
 | group_id  | integer | index: true, null: false, foreign_key:true |
 
 ### Association
