@@ -35,7 +35,7 @@
 
 ### Association
 * belongs_to :user
-* has_ome :message
+* has_one :message
 
 
 ## groups_users table
