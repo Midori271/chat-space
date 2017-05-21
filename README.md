@@ -31,11 +31,11 @@
 | columns  | type    | options                                    |
 |----------|---------|--------------------------------------------|
 | name     | string  | null: false, unique: true                  |
-| user_id  | integer | index: true, null: false, foreign_key:true |
 
 ### Association
-* belongs_to :user
-* has_one :message
+* has_many :users
+* has_many :groups_users
+* has_many :messages, through groups_users
 
 
 ## groups_users table
